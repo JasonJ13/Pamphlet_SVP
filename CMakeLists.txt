@@ -11,6 +11,13 @@ endif()
 
 set (BUILD_SHARED_LIBS FALSE)
 
+fetchContent_Declare( sfml
+  URL https://github.com/SFML/SFML/archive/refs/tags/3.0.2.tar.gz
+)
+option(SFML_BUILD_AUDIO "Build audio" OFF)
+option(SFML_BUILD_NETWORK "Build network" OFF)
+FetchContent_MakeAvailable(sfml)
+
 set(CMAKE_CXX_STANDARD 23)
 
 add_subdirectory(src/core)

@@ -1,5 +1,6 @@
 add_library(lib_core
-  Game.cpp
-  Game.h
+  myMain.cpp myMain.h
+  Game.cpp Game.h
 )
 target_include_directories(lib_core PUBLIC ./)
+target_link_libraries(lib_core PUBLIC sfml-graphics)

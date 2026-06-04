@@ -2,4 +2,7 @@ add_executable(main
   main.cpp
 )
 
-target_link_libraries(main PUBLIC lib_core)
+
+target_link_libraries(main PUBLIC lib_core sfml-graphics)
+
+
