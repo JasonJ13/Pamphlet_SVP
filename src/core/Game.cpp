@@ -2,6 +2,6 @@
 
 
 
-int myMain() {
+int Game() {
   return 0;
 }

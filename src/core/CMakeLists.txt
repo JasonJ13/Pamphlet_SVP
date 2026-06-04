@@ -1,5 +1,5 @@
 add_library(lib_core
-  myMain.cpp
-  myMain.h
+  Game.cpp
+  Game.h
 )
 target_include_directories(lib_core PUBLIC ./)

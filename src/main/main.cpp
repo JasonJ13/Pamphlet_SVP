@@ -2,7 +2,7 @@
 #include <fstream>
 #include <iostream>
 
-#include "myMain.h"
+#include "Game.h"
 
 int main() { 
 	std::cout << "hello world !\n";
