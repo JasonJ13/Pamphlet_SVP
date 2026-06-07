@@ -39,6 +39,16 @@ void Game::run() {
     mouse_information.chunk = 0;
   
 
+    //Test de l'image
+    sf::Texture test_texture{};
+    if (!test_texture.loadFromFile("resources/Cyrano.png"))
+    {
+      assert(false && "Image test non chargee");
+    }
+    sf::Sprite sprite_test{ test_texture };
+    sprite_test.setPosition(sf::Vector2f(100, 100));
+
+
     // Gestion du click
     bool isButtonPressed = sf::Mouse::isButtonPressed(sf::Mouse::Button::Left);
     if (isButtonPressed && !mouse_information.held)
@@ -69,7 +79,8 @@ void Game::run() {
       mouse_information.objhold->set_position(mouse_information.position);
     }
     
-
+    
+    
     render();
   }
   
@@ -81,6 +92,8 @@ void Game::run() {
 void Game::render() 
 {
   mWindow.clear();
+
+  //mWindow.draw(sprite_test);
 
   for (const auto &gameObject : gameObjects)
   {
