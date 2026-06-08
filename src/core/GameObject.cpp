@@ -1,59 +1,51 @@
 
+#include <iostream>
+
 #include "GameObject.h"
 
 
-GameObject::GameObject(float x, float y) : x{x}, y{y}, offset{sf::Vector2i{0,0}}, hitbox{0, 0, 100, 100}, chunk{0} {}
+GameObject::GameObject(const float &x, const float &y, const std::string_view &sprite_name) : priority{ 0 }, texture{}, sprite(texture)
+{
+	if (texture.loadFromFile(std::string(sprite_name))) 
+	{
+		sprite.setPosition(sf::Vector2f(x, y));
+	  sprite.setTexture(texture, true);
+	}
+	else
+	{
+		std::cout << "L'image n'a pas pu etre charge" << std::endl;
+	}
+	return;
+}
 
 
 void GameObject::move(float dx, float dy)
 {
-	x = x + dx;
-	y = y + dy;
-	hitbox.x = hitbox.x + dx;
-	hitbox.y = hitbox.y + dy;
+	sprite.setPosition(sprite.getPosition() + sf::Vector2f{ dx, dy });
+}
+
+void GameObject::move(sf::Vector2i dp)
+{
+	sprite.setPosition(sprite.getPosition() + sf::Vector2f{ dp });
+}
+
+void GameObject::set_position(float x, float y)
+{
+	sprite.setPosition(sf::Vector2f{ x,y });
+}
+
+void GameObject::set_position(sf::Vector2f new_position)
+{
+	sprite.setPosition(new_position);
 }
 
 void GameObject::set_position(sf::Vector2i new_position)
 {
-	x = new_position.x - offset.x;
-	y = new_position.y - offset.y;
-	hitbox.x = new_position.x - 10 - offset.x;
-	hitbox.y = y = new_position.y - 10 - offset.y;
-}
-
-
-
-bool GameObject::in_chunk(int chunk_clicked) const
-{
-	return chunk_clicked == chunk;
-}
-
-bool GameObject::is_hit(sf::Vector2i position) const
-{
-	if (position.x < hitbox.x || position.x > hitbox.x + hitbox.sizeX)
-	{
-		return false;
-	}
-	if (position.y < hitbox.y || position.y > hitbox.y + hitbox.sizeY)
-	{
-		return false;
-	}
-
-	return true;
-}
-
-void GameObject::grabed(sf::Vector2i mouse_position)
-{
-	offset.x = mouse_position.x - x;
-	offset.y = mouse_position.y - y;
+	sprite.setPosition(sf::Vector2f{ new_position });
 }
 
 
 void GameObject::display(sf::RenderWindow &mWindow) const
 {
-	sf::CircleShape circle{ 20 };
-
-	circle.setPosition(sf::Vector2f{ x,y });
-
-	mWindow.draw(circle);
+	mWindow.draw(sprite);
 }

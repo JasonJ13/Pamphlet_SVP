@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Game.h"
+#include "GameObject.h"
 
 
 const sf::Time Game::TimePerFrame = sf::seconds(1.f / 60.f);
@@ -14,11 +15,13 @@ void Game::run() {
   sf::Time timeSinceLastUpdate = sf::Time::Zero;
 
   // Objet de test
-  gameObjects.push_back(std::make_unique<GameObject>(20,20));
+  gameObjects.push_back(std::make_unique<GameObject>(100, 100, "resources/test.jpg"));
 
   
   std::unique_ptr<GameObject> obj_hold;
   
+
+
   while (mWindow.isOpen()) {
     
     while (const std::optional event = mWindow.pollEvent()) {
@@ -37,16 +40,6 @@ void Game::run() {
     // Redéfinition des paramètres de positions de la sourie
     mouse_information.position = sf::Mouse::getPosition() - mWindow.getPosition();
     mouse_information.chunk = 0;
-  
-
-    //Test de l'image
-    sf::Texture test_texture{};
-    if (!test_texture.loadFromFile("resources/Cyrano.png"))
-    {
-      assert(false && "Image test non chargee");
-    }
-    sf::Sprite sprite_test{ test_texture };
-    sprite_test.setPosition(sf::Vector2f(100, 100));
 
 
     // Gestion du click
@@ -54,16 +47,6 @@ void Game::run() {
     if (isButtonPressed && !mouse_information.held)
     {
       mouse_information.held = true;
-
-      // Nouvelle objet cliqué
-      for (auto &gameobj : gameObjects)// | std::views::filter([](const auto &gameobj) { return gameobj->in_chunk(0); }))
-      {
-        if (gameobj->is_hit(mouse_information.position))
-        {
-          mouse_information.objhold = gameobj.get();
-          mouse_information.objhold->grabed(mouse_information.position);
-        }
-      }
     }
 
     // Clique relaché
@@ -92,8 +75,6 @@ void Game::run() {
 void Game::render() 
 {
   mWindow.clear();
-
-  //mWindow.draw(sprite_test);
 
   for (const auto &gameObject : gameObjects)
   {

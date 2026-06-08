@@ -1,54 +1,35 @@
 #pragma once
 
+
 #include <SFML/Graphics.hpp>
 
 
 class GameObject
 {
-	/*
-	* Hitbox de l'objet, différente du visuel 
-	*/
-	struct
-	{
-		float x;
-		float y;
-		float sizeX;
-		float sizeY;
-	} hitbox;
-
  private:
+	 sf::Texture texture;
+	 
 	 /*
-	 * Paramètre visuel de l'objet
+	 * Si plusieurs objets sont sur la même position, la priorite permet de determiner qu'elle objet est pris en compte
+	 * Hyppothèse : Des objets superposé ont des priorites differentes
 	 */
-	float x;
-	float y;
+	 int priority;
 
-	/*
-	 * Section de l'objet dans le jeu
+ protected :
+	 /*
+	 * Sprite de l'objet
 	 */
-	int chunk;
+	 sf::Sprite sprite;
 
-	/*
-	* Offset de la sourie sur l'object
-	*/
-	sf::Vector2i offset;
 
  public:
-	 GameObject(float x, float y);
+	 GameObject(const float& x, const float& y, const std::string_view& sprite_name);
 
 	 void move(float dx, float dy);
+	 void move(sf::Vector2i dp);
+	 void set_position(float x, float y);
+	 void set_position(sf::Vector2f new_position);
 	 void set_position(sf::Vector2i new_position);
-
-	 /*
-	 * Fonction appelé lorsque la souris click sur l'objet
-	 */
-	 void grabed(sf::Vector2i mouse_position);
-
-	 /*
-	 * Correspondance de l'objet avec une position
-	 */
-	 bool in_chunk(int chunk_clicked) const;
-	 bool is_hit(sf::Vector2i position) const;
 
 	 void display(sf::RenderWindow& mWindow) const;
 	 
