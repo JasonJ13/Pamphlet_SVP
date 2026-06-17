@@ -5,7 +5,7 @@ Création d'un jeu en C++ utilisant la bibliothèque SMLF pour le rendu
 ## Description 
 
 Le jeu est inspiré de Paper please ([page steam](https://store.steampowered.com/app/239030/Papers_Please/)),
-ainsi que de la pièce de théâtre Cyrano de Bergerac ( [pdf de la pièce](https://www.theatre-classique.fr/pages/pdf/ROSTAND_CYRANO.pdf)).
+ainsi que de la pièce de théâtre Cyrano de Bergerac ([pdf de la pièce](https://www.theatre-classique.fr/pages/pdf/ROSTAND_CYRANO.pdf)).
 
 Dans ce jeu, vous incarnez un missionnaire entre des tranchées responsable de la correction de poèmes.
 Différents auteurs et autrices se doivent de passer vous voir avant d'envoyer leurs poèmes pour que vous les corrigiez.
