@@ -1,5 +1,7 @@
 #pragma once
 
+#include <SFML/Graphics.hpp>
+
 #include "GameObject.h"
 
 class InteractibleObject : public GameObject
@@ -23,7 +25,9 @@ class InteractibleObject : public GameObject
 
 
  public :
-	 InteractibleObject(const float &x, const float &y, const std::string_view &sprite_name)
+	 InteractibleObject(const float &x, const float &y, const sf::Sprite &sprite, const sf::Vector2f &size);
+	 InteractibleObject(const sf::Vector2f& position, const sf::Sprite &sprite, const sf::Vector2f &size);
+	 ~InteractibleObject() = default;
 	 /*
 	 * Fonction appelé lorsque la souris attrape l'objet
 	 */
@@ -33,4 +37,8 @@ class InteractibleObject : public GameObject
 	 * Correspondance de l'objet avec une position
 	 */
 	 bool is_hit(sf::Vector2i position) const;
+
+	 void set_position(float x, float y);
+	 void set_position(sf::Vector2f new_position);
+	 void set_position(sf::Vector2i new_position);
 };

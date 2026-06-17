@@ -7,28 +7,42 @@
 #include <ranges>
 
 #include "GameObject.h"
+#include "InteractibleObject.h"
+#include "TextureGestioner.h"
+
+static constexpr int SIZE_X = 1080;
+static constexpr int SIZE_Y = 960;
 
 class Game {
+
 
 	struct
 	{
 		sf::Vector2i position;
-		int chunk;
 		bool held;
-		GameObject *objhold;
+		InteractibleObject *objhold;
+		sf::Vector2f old_position;
 	} mouse_information;
 
  private :
-	 sf::RenderWindow mWindow{ sf::VideoMode({640, 480}), "S'il vous plait un panphlet" };
+	 sf::RenderWindow mWindow{ sf::VideoMode({SIZE_X, SIZE_Y}), "S'il vous plait un panphlet" };
 	 static const sf::Time TimePerFrame;
 
-	 std::vector<std::unique_ptr<GameObject>> gameObjects{};
+	 bool isButtonPressed = false;
 
-	 void render();
+	 std::vector<std::unique_ptr<GameObject>> gameObjects{};
+	 
+
+	 void render(float deltaTime);
+
+	 InteractibleObject *get_object_from_position(sf::Vector2i position);
+	 void new_Game_Object(sf::Vector2f position, std::string_view file_name);
+	 void new_Interactible_Object(sf::Vector2f position, std::string_view file_name);
 
 
  public:
 	Game();
+	~Game() = default;
 
 	void run();
 

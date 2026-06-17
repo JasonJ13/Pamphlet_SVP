@@ -11,6 +11,7 @@ endif()
 
 set (BUILD_SHARED_LIBS FALSE)
 
+
 fetchContent_Declare( sfml
   URL https://github.com/SFML/SFML/archive/refs/tags/3.0.2.tar.gz
 )
