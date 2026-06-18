@@ -28,6 +28,8 @@ protected:
 	*/
 	sf::Sprite sprite;
 
+	void create_animation();
+
 
 public:
 	 GameObject(const float &x, const float &y, const sf::Sprite &sprite, const sf::Vector2f &size = sf::Vector2f{ 1, 1 });

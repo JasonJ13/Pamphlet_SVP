@@ -6,8 +6,8 @@
 
 InteractibleObject::InteractibleObject(const float &x, const float &y, const sf::Sprite &sprite, const sf::Vector2f &size) : GameObject{ x, y, sprite, size }, hitbox { x, y, 0, 0 }, offset{ 0, 0 }
 {
-	hitbox.sizeX = 400;
-	hitbox.sizeY = 400;
+	hitbox.sizeX = 128;
+	hitbox.sizeY = 128;
 }
 InteractibleObject::InteractibleObject(const sf::Vector2f &position, const sf::Sprite &sprite, const sf::Vector2f &size) : InteractibleObject{position.x, position.y, sprite, size} {}
 

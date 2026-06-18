@@ -6,7 +6,7 @@
 
 namespace Textures
 {
-	enum ID { Test, Cyrano};
+	enum ID { Test, Cyrano, Parchemin};
 }
 
 class TextureGestioner

@@ -6,8 +6,9 @@
 #include <memory>
 #include <ranges>
 
-#include "GameObject.h"
-#include "InteractibleObject.h"
+#include "Object/GameObject.h"
+#include "Object/InteractibleObject.h"
+#include "Object/Parchemin.h"
 #include "TextureGestioner.h"
 
 static constexpr int SIZE_X = 1080;
@@ -20,7 +21,7 @@ class Game {
 	{
 		sf::Vector2i position;
 		bool held;
-		InteractibleObject *objhold;
+		std::shared_ptr<InteractibleObject> objhold;
 		sf::Vector2f old_position;
 	} mouse_information;
 
@@ -30,14 +31,13 @@ class Game {
 
 	 bool isButtonPressed = false;
 
-	 std::vector<std::unique_ptr<GameObject>> gameObjects{};
+	 std::vector<std::shared_ptr<GameObject>> gameObjects{};
+	 std::vector<std::shared_ptr<InteractibleObject>> interactibleObjects{};
 	 
 
 	 void render(float deltaTime);
 
-	 InteractibleObject *get_object_from_position(sf::Vector2i position);
-	 void new_Game_Object(sf::Vector2f position, std::string_view file_name);
-	 void new_Interactible_Object(sf::Vector2f position, std::string_view file_name);
+	 std::shared_ptr<InteractibleObject> get_object_from_position(sf::Vector2i position);
 
 
  public:
