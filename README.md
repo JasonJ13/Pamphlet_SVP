@@ -43,15 +43,16 @@ Le projet est divisé en plusieurs fichiers représentant plusieurs classes, cha
 - Système de prise d'un objet (retirer pour cause de bug).
 - Création d'animation sur des propriétés élémentaires de GameObject (float, Vector2f et Angle).
 - Gestion des textures basiques avec TextureGestionner.
-
-### Ce que je vise dans un future proche (aujourd'hui & demain)
-- Spécification des objets de base.
 - Achèvement du système d'animation pour faciliter la création et le lancement.
 - Ré-implémentation du système de prise d'un objet (sans bug)
+- Spécification des objets de base.
+
+### Ce que je vise dans un future proche (aujourd'hui & demain)
+- Système d'animation plus fluide (renseigner sur les signaux)
 - Finir la semaine sans bug
 
 ### Ce qu'il faut que j'implémente
-- Système d'animation plus fuite (renseigner sur les signaux)
+
 - Différentes classes dérivées de GameObject & InteractibleObject (l'idée étant de les rendre abstraites)
 - Base graphique du jeu sur laquelle je peux m'appuyer pour le rendu final.
 
@@ -62,4 +63,5 @@ Le projet est divisé en plusieurs fichiers représentant plusieurs classes, cha
 
 
 ## Log du README
-Modifié le 17/06 à 12:20 par JasonJ13
+Modifié le 17/06 à 12:20 par JasonJ13 -> Création du fichier
+Modifié le 18/06 à 10:30 par JasonJ13 -> avancement des tâches immédiates
