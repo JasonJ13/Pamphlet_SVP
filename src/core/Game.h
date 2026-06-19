@@ -11,8 +11,8 @@
 #include "Object/Parchemin.h"
 #include "TextureGestioner.h"
 
-static constexpr int SIZE_X = 1080;
-static constexpr int SIZE_Y = 960;
+static constexpr int SIZE_X = 1600;
+static constexpr int SIZE_Y = 900;
 
 class Game {
 

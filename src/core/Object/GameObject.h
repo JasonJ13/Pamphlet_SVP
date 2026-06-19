@@ -4,14 +4,11 @@
 #include <SFML/Graphics.hpp>
 #include <variant>
 #include <unordered_map>
-#include <string>
+#include <memory>
 #include <string_view>
 
-#include "Animation.hpp"
+#include "Animation/Animation.h"
 
-
-using AnimationVariant = std::variant<Animation<float>, Animation<sf::Vector2f>, Animation<sf::Angle>>;
-//using Position_T;
 
 class GameObject
 {
@@ -21,22 +18,25 @@ private:
 	* Hyppothèse : Des objets superposé ont des priorites differentes
 	*/
 	int priority;
-	sf::Vector2f position;
+	
 	sf::Angle angle;
 	sf::Vector2f size;
-	std::unordered_map<std::string_view, AnimationVariant> animations;
-
-	void add_animation(AnimationVariant animation, const std::string_view& animation_name, const bool play);
+	std::unordered_map<std::string_view, std::unique_ptr<Animation>> animations;
 
 protected:
+	sf::Vector2f position;
+
 	sf::Sprite sprite;
 
-	//void create_animation(float vend_x, float vend_y, float duration, std::string_view animation_name, bool play = false, bool cycle = false, bool reverse = false);
-	void create_animation_position_x(float vend, float duration, std::string_view animation_name, bool play = false, bool cycle = false, bool reverse = false);
-	void create_animation_position_y(float vend, float duration, std::string_view animation_name, bool play = false, bool cycle = false, bool reverse = false);
-	void create_animation_position(sf::Vector2f vend, float duration, std::string_view animation_name, bool play = false, bool cycle = false, bool reverse = false);
-	void create_animation_angle(sf::Angle vend, float duration, std::string_view animation_name, bool play = false, bool cycle = false, bool reverse = false);
-	void create_animation_size(sf::Vector2f vend, float duration, std::string_view animation_name, bool play = false, bool cycle = false, bool reverse = false);
+	void add_animation(std::unique_ptr<Animation> animation, std::string_view animation_name);
+
+	void create_animation_position_x(float vend, float duration, std::string_view animation_name, bool cycle = false, bool reverse = false);
+	void create_animation_position_y(float vend, float duration, std::string_view animation_name, bool cycle = false, bool reverse = false);
+	void create_animation_position(sf::Vector2f vend, float duration, std::string_view animation_name, bool cycle = false, bool reverse = false);
+	void create_animation_angle(sf::Angle vend, float duration, std::string_view animation_name, bool cycle = false, bool reverse = false);
+	void create_animation_size(sf::Vector2f vend, float duration, std::string_view animation_name, bool cycle = false, bool reverse = false);
+
+	void play_animation(std::string_view animation_name);
 
 
 public:

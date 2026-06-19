@@ -1,21 +1,14 @@
 
 #include <iostream>
+#include <unordered_map>
 
 #include "GameObject.h"
-#include "Animation.hpp"
+#include "Animation/Animation.h"
+#include "Animation/AnimationUnit.hpp"
 
 
 
-GameObject::GameObject(const float &x, const float &y, const sf::Sprite& sprite, const sf::Vector2f &size) : priority{ 0 }, sprite{ sprite }, position{sf::Vector2f{x,y}}, angle{}, size{size}
-{
-	/*Animation<float> animation{&position.x ,(SIZE_X / 2.f - 128), 3, false};
-	Animation<float> animation2{ &position.y , position.y - 16, 0.2, true };
-	Animation<float> animation3{ &position.y , position.y - 16, 0.8, true };
-	animation.play();
-	animation2.play();
-	animations.push_back(std::move(animation));
-	animations.push_back(std::move(animation2));*/
-}
+GameObject::GameObject(const float &x, const float &y, const sf::Sprite& sprite, const sf::Vector2f &size) : priority{ 0 }, sprite{ sprite }, position{sf::Vector2f{x,y}}, angle{}, size{size}{}
 GameObject::GameObject(const sf::Vector2f &position, const sf::Sprite &sprite, const sf::Vector2f &size) : GameObject{position.x, position.y, sprite, size } {}
 
 
@@ -65,44 +58,50 @@ void GameObject::display(sf::RenderWindow &mWindow, float deltaSec)
 
 	for (auto &var : animations)
 	{
-		std::visit([&](auto &animation){ animation.progress(deltaSec); }, var.second);
+		var.second->progress(deltaSec);
 	}
 
 	mWindow.draw(sprite);
 }
 
-void GameObject::add_animation(AnimationVariant animation, const std::string_view& animation_name, const bool play)
+
+void GameObject::add_animation(std::unique_ptr<Animation> animation, std::string_view animation_name)
 {
-	if (play) std::visit([&](auto &anim) { anim.play(); }, animation);
 	animations.emplace(animation_name, std::move(animation));
 }
 
-void GameObject::create_animation_position_x(float vend, float duration, std::string_view animation_name, bool play, bool cycle, bool reverse)
+
+void GameObject::create_animation_position_x(float vend, float duration, std::string_view animation_name, bool cycle, bool reverse)
 {
-	Animation<float> animation{ &position.x, vend, duration, cycle, reverse };
-	add_animation((AnimationVariant) animation, animation_name, play);
+	auto animation = std::make_unique<AnimationUnit<float>>(&position.x, vend, duration, cycle, reverse);
+	add_animation(std::move(animation), animation_name);
 }
 
-void GameObject::create_animation_position_y(float vend, float duration, std::string_view animation_name, bool play, bool cycle, bool reverse)
+void GameObject::create_animation_position_y(float vend, float duration, std::string_view animation_name, bool cycle, bool reverse)
 {
-	Animation<float> animation{ &position.y, vend, duration, cycle, reverse };
-	add_animation((AnimationVariant) animation, animation_name, play);
+	auto animation = std::make_unique<AnimationUnit<float>>(&position.y, vend, duration, cycle, reverse);
+	add_animation(std::move(animation), animation_name);
 }
 
-void GameObject::create_animation_position(sf::Vector2f vend, float duration, std::string_view animation_name, bool play, bool cycle, bool reverse)
+void GameObject::create_animation_position(sf::Vector2f vend, float duration, std::string_view animation_name, bool cycle, bool reverse)
 {
-	Animation<sf::Vector2f> animation{ &position, vend, duration, cycle, reverse };
-	add_animation((AnimationVariant) animation, animation_name, play);
+	auto animation = std::make_unique < AnimationUnit<sf::Vector2f>>(&position, vend, duration, cycle, reverse);
+	add_animation(std::move(animation), animation_name);
 }
 
-void GameObject::create_animation_angle(sf::Angle vend, float duration, std::string_view animation_name, bool play, bool cycle, bool reverse)
+void GameObject::create_animation_angle(sf::Angle vend, float duration, std::string_view animation_name, bool cycle, bool reverse)
 {
-	Animation<sf::Angle> animation{ &angle, vend, duration, cycle, reverse };
-	add_animation((AnimationVariant) animation, animation_name, play);
+	auto animation = std::make_unique<AnimationUnit<sf::Angle>>(&angle, vend, duration, cycle, reverse);
+	add_animation(std::move(animation), animation_name);
 }
 
-void GameObject::create_animation_size(sf::Vector2f vend, float duration, std::string_view animation_name, bool play, bool cycle, bool reverse)
+void GameObject::create_animation_size(sf::Vector2f vend, float duration, std::string_view animation_name, bool cycle, bool reverse)
 {
-	Animation<sf::Vector2f> animation{ &size, vend, duration, cycle, reverse };
-	add_animation((AnimationVariant) animation, animation_name, play);
+	auto animation = std::make_unique< AnimationUnit<sf::Vector2f>>(&size, vend, duration, cycle, reverse);
+	add_animation(std::move(animation), animation_name);
+}
+
+void GameObject::play_animation(std::string_view animation_name)
+{
+	animations.at(animation_name)->play();
 }

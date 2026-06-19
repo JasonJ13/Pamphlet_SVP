@@ -8,7 +8,11 @@ add_library(lib_core
   Object/Parchemin.cpp Object/Parchemin.h
   Object/Character.cpp Object/Character.h
 
-  Animation.inl Animation.hpp
+  Animation/Animation.cpp Animation/Animation.h
+  Animation/Animationunit.inl Animation/AnimationUnit.hpp
+  Animation/AnimationGroup.cpp Animation/AnimationGroup.h
+  Animation/AnimationGroupLinear.cpp Animation/AnimationGroupLinear.h
+  Animation/AnimationGroupParallel.cpp Animation/AnimationGroupparallel.h
 )
 target_include_directories(lib_core PUBLIC ./)
 target_link_libraries(lib_core PUBLIC sfml-graphics)

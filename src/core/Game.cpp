@@ -15,7 +15,6 @@ Game::Game() : mouse_information{ sf::Vector2i {0,0}, false, nullptr, sf::Vector
 
 std::shared_ptr<InteractibleObject> Game::get_object_from_position(sf::Vector2i position)
 {
-  //sf::Vector2i cell = position / 256;
 
   int priority = -1;
   std::shared_ptr<InteractibleObject>object_selected = nullptr;
@@ -96,11 +95,8 @@ void Game::run() {
     {
       if (mouse_information.objhold != nullptr)
       {
-        //std::remove(positionIO[mouse_information.old_position.x / 256][mouse_information.old_position.y / 256].begin(),
-          //positionIO[mouse_information.old_position.x / 256][mouse_information.old_position.y / 256].end(), mouse_information.objhold);
 
         sf::Vector2f new_position = mouse_information.objhold->get_position();
-        //positionIO[new_position.x / 256][new_position.y / 256].push_back(mouse_information.objhold);
       }
 
       mouse_information.held = false;
@@ -110,7 +106,6 @@ void Game::run() {
     // Clique maintenu avec objet
     else if (mouse_information.objhold != nullptr)
     {
-      //std::cout << "grabe" << '\n';
       mouse_information.objhold->set_position(mouse_information.position);
     }
 
