@@ -34,6 +34,11 @@ Le projet est divisé en plusieurs fichiers représentant plusieurs classes, cha
 
 
 
+### Système d'annimation
+Le système d'annimation n'étant plus une classe mais une structure de template [Composite](https://refactoring.guru/fr/design-patterns/composite), voici une image du schéma de la structure :
+
+![](Graph/Animation.png)
+
 ## Progression
 
 ### Ce que j'ai accompli (structure fondamentale)
@@ -46,15 +51,16 @@ Le projet est divisé en plusieurs fichiers représentant plusieurs classes, cha
 - Achèvement du système d'animation pour faciliter la création et le lancement.
 - Ré-implémentation du système de prise d'un objet (sans bug)
 - Spécification des objets de base.
+- Système d'animation complet
 
 ### Ce que je vise dans un future proche (aujourd'hui & demain)
-- Système d'animation plus fluide (renseigner sur les signaux)
 - Finir la semaine sans bug
+- Base graphique du jeu sur laquelle je peux m'appuyer pour le rendu final.
 
 ### Ce qu'il faut que j'implémente
 
 - Différentes classes dérivées de GameObject & InteractibleObject (l'idée étant de les rendre abstraites)
-- Base graphique du jeu sur laquelle je peux m'appuyer pour le rendu final.
+
 
 ### Ce que j'aimerai bien ajouter
 - Animation non linéaire (sinusoïdal et quadratique)
