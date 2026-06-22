@@ -81,8 +81,10 @@ void ParcheminBig::parse(const pugi::xml_node& xml_poeme)
 {
 	std::string new_containt;
 
+	std::cout << xml_poeme.first_child().name() << '\n';
 	for (auto &vers : xml_poeme.children())
 	{
+		std::cout << "vers" << '\n';
 		std::cout << vers.name() << '\n';
 
 
@@ -90,6 +92,7 @@ void ParcheminBig::parse(const pugi::xml_node& xml_poeme)
 }
 pugi::xml_node ParcheminBig::add_error(pugi::xml_node poeme) {
 
+	return pugi::xml_node{};
 }
 
 bool ParcheminBig::reset_contain()
@@ -102,14 +105,15 @@ bool ParcheminBig::reset_contain()
 	doc.load_file("resources/poemes/albatros.xml");
 	bool correct = (dis(gen) % 2);
 
-	std::cout << doc << '\n';
 	if (correct) { std::cout << "correct\n"; }
 	else {
 		std::cout << "not correct\n";
 		
 	}
 
-	
+
+	std::cout << doc.find_child("strophe") << '\n';
+	//parse(doc.first_child().first_child());
 
 	return correct;
 }
