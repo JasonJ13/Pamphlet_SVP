@@ -1,34 +1,63 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Graphics/color.hpp>
 #include <utility>
 #include <iostream>
 #include <memory>
 #include <ranges>
 
-#include "GameObject.h"
+#include "Object/GameObject.h"
+#include "Object/InteractibleObject.h"
+#include "Object/Parchemin.h"
+#include "Object/FixObject.h"
+#include "TextureGestioner.h"
+
+#include "Object/Interface/InterfaceText.h"
+
+static constexpr int SIZE_X{ 1600 };
+static constexpr int SIZE_Y{ 900 };
+
+static constexpr sf::Color MAIN_COLOR{ 48, 64, 0 };
 
 class Game {
+
 
 	struct
 	{
 		sf::Vector2i position;
-		int chunk;
 		bool held;
-		GameObject *objhold;
+		std::shared_ptr<InteractibleObject> objhold;
+ 		sf::Vector2f old_position;
 	} mouse_information;
 
  private :
-	 sf::RenderWindow mWindow{ sf::VideoMode({640, 480}), "S'il vous plait un panphlet" };
+	 sf::RenderWindow mWindow{ sf::VideoMode({SIZE_X, SIZE_Y}), "S'il vous plait un panphlet" };
 	 static const sf::Time TimePerFrame;
+	 
+	 int score = 0;
+	 std::shared_ptr<Parchemin> parchemin;
+	 std::shared_ptr<InterfaceText> scoreInterface;
 
-	 std::vector<std::unique_ptr<GameObject>> gameObjects{};
+	 bool isButtonPressed = false;
 
-	 void render();
+	 std::vector<std::shared_ptr<GameObject>> gameObjects{};
+	 std::vector<std::shared_ptr<InteractibleObject>> interactibleObjects{};
+	 
+	 std::shared_ptr<InteractibleObject> get_object_from_position(sf::Vector2i position);
+
+	 void new_character();
+
+	 void prepare();
+	 void click_gestioner();
+	 void update(float deltaTime);
+
+	 
 
 
  public:
 	Game();
+	~Game() = default;
 
 	void run();
 
