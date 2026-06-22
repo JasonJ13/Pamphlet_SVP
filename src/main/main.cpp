@@ -8,6 +8,6 @@
 
 int main() { 
 
-	//return myMain(); 
-	return myMainPretreatment();
+	return myMain(); 
+	//return myMainPretreatment();
 }
