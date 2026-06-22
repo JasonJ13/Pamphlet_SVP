@@ -91,9 +91,8 @@ void ParcheminBig::parse(const pugi::xml_node& xml_poeme)
 		}
 		new_string += '\n';
 	}
-	std::cout << new_string << '\n';
 
-	contenu.set_string(new_string);
+	contenu.set_string( new_string );
 }
 
 
