@@ -14,7 +14,7 @@ static std::random_device rd; // Get random number from hardware
 static std::mt19937 gen(rd()); // Seed generator
 
 
-static const std::filesystem::path resourcesPath = std::filesystem::path("Resources") / "texts";
+static const std::filesystem::path resourcesPath = std::filesystem::path("Resources") / "poemes";
 
 ParcheminBig::ParcheminBig(const sf::Vector2f &position, TextureGestioner &textureGestioner) : InteractibleObject{ std::make_unique<InterfaceSprite>("Resources/parcheminEmpty.png", textureGestioner, 1, 0.2) }, titre{ "Titre", 3 }, contenu{ "blablabla", 3 }
 {
@@ -78,14 +78,16 @@ bool ParcheminBig::reset_contain()
 {
 	// Collecte tous les fichiers réguliers du dossier resourcesPath
 	
-	static std::uniform_int_distribution<> dis(0, files.size() - 1);
+	static std::uniform_int_distribution<> dis(0, 5);
 
-	auto &new_poeme = files[dis(gen)];
+	auto &new_poeme = files[0];
 	bool correct = (dis(gen) % 2);
 
 	std::cout << new_poeme << '\n';
 	if (correct) std::cout << "correct\n";
 	else std::cout << "not correct\n";
+
+	
 
 	return correct;
 }
