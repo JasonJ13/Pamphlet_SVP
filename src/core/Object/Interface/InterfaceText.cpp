@@ -4,6 +4,7 @@
 
 InterfaceText::InterfaceText(const std::string &string, const int &priority) : Interface{ priority }, text{ font, string } 
 {
+	text.setCharacterSize(20);
 	text.setFillColor(sf::Color::Red);
 }
 

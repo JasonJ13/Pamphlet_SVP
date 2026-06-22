@@ -25,7 +25,7 @@ private :
 
 	void _update(sf::RenderWindow &mWindow, const float &deltaSec) override;
 
-	void parse(pugi::xml_node xml_poeme);
+	void parse(const pugi::xml_node &xml_poeme);
 
 	pugi::xml_node add_error(pugi::xml_node poeme);
 

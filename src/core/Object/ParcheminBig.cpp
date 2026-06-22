@@ -71,25 +71,32 @@ void ParcheminBig::_release(const sf::Vector2i &mouse_position, const sf::Vector
 void ParcheminBig::_update(sf::RenderWindow &mWindow, const float &deltaSec)
 {
 	titre.set_position(position + sf::Vector2f(get_size().x / 2.f - 32, 128));
-	contenu.set_position(position + sf::Vector2f(get_size().x / 4.f, 128*2));
+	contenu.set_position(position + sf::Vector2f(get_size().x / 4.f, 128*3/2));
 
 	titre.display(mWindow);
 	contenu.display(mWindow);
 }
 
-void ParcheminBig::parse(pugi::xml_node xml_poeme)
+void ParcheminBig::parse(const pugi::xml_node& xml_poeme)
 {
-	std::string new_containt;
+	std::string new_string = "";
 
-	std::cout << xml_poeme.first_child().next_sibling().next_sibling().name() << '\n';
-	for (auto &vers : xml_poeme.first_child().children())
+	titre.set_string(xml_poeme.attribute("titre").as_string());
+	for (auto &vers : xml_poeme.children())
 	{
-		//std::cout << "vers" << '\n';
-		std::cout << vers.name() << '\n';
-
-
+		for (auto &word : vers.children())
+		{
+			if (std::strcmp(word.name(), "mot") == 0)	new_string =  new_string + " " + word.attribute("label").as_string();
+			else new_string += word.attribute("label").as_string();
+		}
+		new_string += '\n';
 	}
+	std::cout << new_string << '\n';
+
+	contenu.set_string(new_string);
 }
+
+
 pugi::xml_node ParcheminBig::add_error(pugi::xml_node poeme) {
 	size_t count = std::distance(poeme.begin(), poeme.end());
 	for (auto vers = poeme.begin(); vers != poeme.end(); ++vers) {
