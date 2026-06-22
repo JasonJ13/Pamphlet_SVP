@@ -91,8 +91,18 @@ void ParcheminBig::parse(const pugi::xml_node& xml_poeme)
 	}
 }
 pugi::xml_node ParcheminBig::add_error(pugi::xml_node poeme) {
-
-	return pugi::xml_node{};
+	size_t count = std::distance(poeme.begin(), poeme.end());
+	std::uniform_int_distribution<> vers_to_change(0, count);
+	pugi::xml_node vers = poeme.first_child();
+	for (auto i = 0; i < vers_to_change(gen); ++i)
+	{
+		vers = vers.next_sibling();
+	}
+	pugi::xml_node mot = vers.last_child();
+	std::cout << mot.attribute("replace");
+	mot.previous_sibling();
+	std::cout << vers.name() << '\n';
+	return poeme;
 }
 
 bool ParcheminBig::reset_contain()
@@ -103,12 +113,13 @@ bool ParcheminBig::reset_contain()
 
 	pugi::xml_document doc;
 	doc.load_file("resources/poemes/albatros.xml");
+	pugi::xml_node poeme = doc.child("poeme");
 	bool correct = (dis(gen) % 2);
 
 	if (correct) { std::cout << "correct\n"; }
 	else {
 		std::cout << "not correct\n";
-		
+		add_error(poeme);
 	}
 
 

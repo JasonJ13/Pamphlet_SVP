@@ -1,183 +1,180 @@
 <?xml version="1.0"?>
-<poeme titre="test" auteur="Simon Pesneau">
-	<strophe ID="0" nombre de vers="1">
-		<vers ID="0">
-			<souvent majuscule="true" phono="'@'" nature="'ADV'" nbsyll="2" replace="true" />
-			<, nature="PON" replace="false" />
-			<pour majuscule="false" phono="'R'" nature="'PRE'" nbsyll="1" replace="true" />
-			<s’amuser majuscule="true" replace="false" />
-			<, nature="PON" replace="false" />
-			<les majuscule="false" phono="'e'" nature="'ART:def'" nbsyll="1" replace="true" />
-			<hommes majuscule="false" phono="'m'" nature="'NOM'" nbsyll="1" replace="true" />
-			<d’équipage majuscule="false" replace="false" />
-		</vers>
-		<vers ID="0">
-			<prennent majuscule="true" phono="'n'" nature="'VER'" nbsyll="1" replace="true" />
-			<des majuscule="false" phono="'e'" nature="'ART:ind'" nbsyll="1" replace="true" />
-			<albatros majuscule="true" phono="'s'" nature="'NOM'" nbsyll="3" replace="true" />
-			<, nature="PON" replace="false" />
-			<vastes majuscule="false" phono="'t'" nature="'ADJ'" nbsyll="1" replace="true" />
-			<oiseaux majuscule="false" phono="'o'" nature="'NOM'" nbsyll="2" replace="true" />
-			<des majuscule="false" phono="'e'" nature="'ART:ind'" nbsyll="1" replace="true" />
-			<mers majuscule="true" phono="'R'" nature="'NOM'" nbsyll="1" replace="true" />
-			<, nature="PON" replace="false" />
-		</vers>
-		<vers ID="0">
-			<qui majuscule="true" phono="'i'" nature="'PRO:rel'" nbsyll="1" replace="true" />
-			<suivent majuscule="true" phono="'v'" nature="'VER'" nbsyll="1" replace="true" />
-			<, nature="PON" replace="false" />
-			<indolents majuscule="false" phono="'@'" nature="'ADJ'" nbsyll="3" replace="true" />
-			<compagnons majuscule="false" phono="'�'" nature="'NOM'" nbsyll="3" replace="true" />
-			<de majuscule="false" phono="'�'" nature="'PRE'" nbsyll="1" replace="true" />
-			<voyage majuscule="true" phono="'Z'" nature="'NOM'" nbsyll="2" replace="true" />
-			<, nature="PON" replace="false" />
-		</vers>
-		<vers ID="0">
-			<le majuscule="true" phono="'�'" nature="'ART:def'" nbsyll="1" replace="true" />
-			<navire majuscule="false" phono="'R'" nature="'NOM'" nbsyll="2" replace="true" />
-			<glissant majuscule="false" phono="'@'" nature="'VER'" nbsyll="2" replace="true" />
-			<sur majuscule="false" phono="'R'" nature="'PRE'" nbsyll="1" replace="true" />
-			<les majuscule="false" phono="'e'" nature="'ART:def'" nbsyll="1" replace="true" />
-			<gouffres majuscule="false" phono="'R'" nature="'NOM'" nbsyll="1" replace="true" />
-			<amers majuscule="true" phono="'R'" nature="'ADJ'" nbsyll="2" replace="true" />
-			<. nature="PON" replace="false" />
-		</vers>
-		<vers ID="0" />
-		<vers ID="0">
-			<a majuscule="true" replace="false" />
-			<peine majuscule="false" phono="'n'" nature="'NOM'" nbsyll="1" replace="true" />
-			<les majuscule="false" phono="'e'" nature="'ART:def'" nbsyll="1" replace="true" />
-			<ont-ils majuscule="false" replace="false" />
-			<déposés majuscule="false" phono="'e'" nature="'VER'" nbsyll="3" replace="true" />
-			<sur majuscule="false" phono="'R'" nature="'PRE'" nbsyll="1" replace="true" />
-			<les majuscule="false" phono="'e'" nature="'ART:def'" nbsyll="1" replace="true" />
-			<planches majuscule="true" phono="'S'" nature="'NOM'" nbsyll="1" replace="true" />
-			<, nature="PON" replace="false" />
-		</vers>
-		<vers ID="0">
-			<que majuscule="true" phono="'�'" nature="'PRO:rel'" nbsyll="1" replace="true" />
-			<ces majuscule="false" phono="'e'" nature="'ADJ:dem'" nbsyll="1" replace="true" />
-			<rois majuscule="false" phono="'a'" nature="'NOM'" nbsyll="1" replace="true" />
-			<de majuscule="false" phono="'�'" nature="'PRE'" nbsyll="1" replace="true" />
-			<l’azur majuscule="true" replace="false" />
-			<, nature="PON" replace="false" />
-			<maladroits majuscule="false" phono="'a'" nature="'ADJ'" nbsyll="3" replace="true" />
-			<et majuscule="false" phono="'e'" nature="'CON'" nbsyll="1" replace="true" />
-			<honteux majuscule="true" phono="'2'" nature="'ADJ'" nbsyll="2" replace="true" />
-			<, nature="PON" replace="false" />
-		</vers>
-		<vers ID="0">
-			<laissent majuscule="true" phono="'s'" nature="'VER'" nbsyll="1" replace="true" />
-			<piteusement majuscule="false" phono="'@'" nature="'ADV'" nbsyll="4" replace="true" />
-			<leurs majuscule="false" phono="'R'" nature="'ADJ:pos'" nbsyll="1" replace="true" />
-			<grandes majuscule="false" phono="'d'" nature="'ADJ'" nbsyll="1" replace="true" />
-			<ailes majuscule="false" phono="'l'" nature="'NOM'" nbsyll="1" replace="true" />
-			<blanches majuscule="false" phono="'S'" nature="'ADJ'" nbsyll="1" replace="true" />
-		</vers>
-		<vers ID="0">
-			<comme majuscule="true" phono="'m'" nature="'CON'" nbsyll="1" replace="true" />
-			<des majuscule="false" phono="'e'" nature="'ART:ind'" nbsyll="1" replace="true" />
-			<avirons majuscule="false" phono="'�'" nature="'NOM'" nbsyll="3" replace="true" />
-			<traîner majuscule="false" phono="'e'" nature="'VER'" nbsyll="2" replace="true" />
-			<à majuscule="false" phono="'a'" nature="'PRE'" nbsyll="1" replace="true" />
-			<côté majuscule="false" phono="'e'" nature="'NOM'" nbsyll="2" replace="true" />
-			<d’eux majuscule="true" replace="false" />
-			<. nature="PON" replace="false" />
-		</vers>
-		<vers ID="0" />
-		<vers ID="0">
-			<ce majuscule="true" phono="'2'" nature="'PRO:dem'" nbsyll="1" replace="true" />
-			<voyageur majuscule="false" phono="'R'" nature="'NOM'" nbsyll="3" replace="true" />
-			<ailé majuscule="true" phono="'e'" nature="'ADJ'" nbsyll="2" replace="true" />
-			<, nature="PON" replace="false" />
-			<comme majuscule="false" phono="'m'" nature="'CON'" nbsyll="1" replace="true" />
-			<il majuscule="false" phono="'l'" nature="'PRO:per'" nbsyll="1" replace="true" />
-			<est majuscule="false" phono="'e'" nature="'VER'" nbsyll="1" replace="true" />
-			<gauche majuscule="false" phono="'S'" nature="'ADJ'" nbsyll="1" replace="true" />
-			<et majuscule="false" phono="'e'" nature="'CON'" nbsyll="1" replace="true" />
-			<veule majuscule="false" phono="'l'" nature="'ADJ'" nbsyll="1" replace="true" />
-			<! majuscule="false" replace="false" />
-		</vers>
-		<vers ID="0">
-			<lui majuscule="true" phono="'i'" nature="'PRO:per'" nbsyll="1" replace="true" />
-			<, nature="PON" replace="false" />
-			<naguère majuscule="false" phono="'R'" nature="'ADV'" nbsyll="2" replace="true" />
-			<si majuscule="false" phono="'i'" nature="'CON'" nbsyll="1" replace="true" />
-			<beau majuscule="true" phono="'o'" nature="'ADJ'" nbsyll="1" replace="true" />
-			<, nature="PON" replace="false" />
-			<qu’il majuscule="false" replace="false" />
-			<est majuscule="false" phono="'e'" nature="'VER'" nbsyll="1" replace="true" />
-			<comique majuscule="false" phono="'k'" nature="'ADJ'" nbsyll="2" replace="true" />
-			<et majuscule="false" phono="'e'" nature="'CON'" nbsyll="1" replace="true" />
-			<laid majuscule="false" phono="'E'" nature="'ADJ'" nbsyll="1" replace="true" />
-			<! majuscule="false" replace="false" />
-		</vers>
-		<vers ID="0">
-			<l’un majuscule="true" replace="false" />
-			<agace majuscule="false" phono="'s'" nature="'VER'" nbsyll="2" replace="true" />
-			<son majuscule="false" phono="'�'" nature="'ADJ:pos'" nbsyll="1" replace="true" />
-			<bec majuscule="false" phono="'k'" nature="'NOM'" nbsyll="1" replace="true" />
-			<avec majuscule="false" phono="'k'" nature="'PRE'" nbsyll="2" replace="true" />
-			<un majuscule="false" phono="'1'" nature="'ART:ind'" nbsyll="1" replace="true" />
-			<brûle-gueule majuscule="true" phono="'l'" nature="'NOM'" nbsyll="2" replace="true" />
-			<, nature="PON" replace="false" />
-		</vers>
-		<vers ID="0">
-			<l’autre majuscule="true" replace="false" />
-			<mime majuscule="true" phono="'m'" nature="'VER'" nbsyll="1" replace="true" />
-			<, nature="PON" replace="false" />
-			<en majuscule="false" phono="'@'" nature="'PRE'" nbsyll="1" replace="true" />
-			<boitant majuscule="true" phono="'@'" nature="'VER'" nbsyll="2" replace="true" />
-			<, nature="PON" replace="false" />
-			<l’infirme majuscule="false" replace="false" />
-			<qui majuscule="false" phono="'i'" nature="'PRO:rel'" nbsyll="1" replace="true" />
-			<volait majuscule="false" phono="'E'" nature="'VER'" nbsyll="2" replace="true" />
-			<! majuscule="false" replace="false" />
-		</vers>
-		<vers ID="0" />
-		<vers ID="0">
-			<le majuscule="true" phono="'�'" nature="'ART:def'" nbsyll="1" replace="true" />
-			<poète majuscule="true" phono="'t'" nature="'NOM'" nbsyll="2" replace="true" />
-			<est majuscule="false" phono="'e'" nature="'VER'" nbsyll="1" replace="true" />
-			<semblable majuscule="false" phono="'l'" nature="'ADJ'" nbsyll="2" replace="true" />
-			<au majuscule="false" phono="'o'" nature="'ART:def'" nbsyll="1" replace="true" />
-			<prince majuscule="false" phono="'s'" nature="'NOM'" nbsyll="1" replace="true" />
-			<des majuscule="false" phono="'e'" nature="'ART:ind'" nbsyll="1" replace="true" />
-			<nuées majuscule="false" phono="'e'" nature="'NOM'" nbsyll="1" replace="true" />
-		</vers>
-		<vers ID="0">
-			<qui majuscule="true" phono="'i'" nature="'PRO:rel'" nbsyll="1" replace="true" />
-			<hante majuscule="false" phono="'t'" nature="'VER'" nbsyll="1" replace="true" />
-			<la majuscule="false" phono="'a'" nature="'ART:def'" nbsyll="1" replace="true" />
-			<tempête majuscule="false" phono="'t'" nature="'NOM'" nbsyll="2" replace="true" />
-			<et majuscule="false" phono="'e'" nature="'CON'" nbsyll="1" replace="true" />
-			<se majuscule="false" phono="'�'" nature="'PRO:per'" nbsyll="1" replace="true" />
-			<rit majuscule="false" phono="'i'" nature="'VER'" nbsyll="1" replace="true" />
-			<de majuscule="false" phono="'�'" nature="'PRE'" nbsyll="1" replace="true" />
-			<l’archer majuscule="false" replace="false" />
-			<:anonymous majuscule="true" replace="false" />
-			<; nature="PON" replace="false" />
-		</vers>
-		<vers ID="0">
-			<exilé majuscule="true" phono="'e'" nature="'VER'" nbsyll="3" replace="true" />
-			<sur majuscule="false" phono="'R'" nature="'PRE'" nbsyll="1" replace="true" />
-			<le majuscule="false" phono="'�'" nature="'ART:def'" nbsyll="1" replace="true" />
-			<sol majuscule="false" phono="'l'" nature="'NOM'" nbsyll="1" replace="true" />
-			<au majuscule="false" phono="'o'" nature="'ART:def'" nbsyll="1" replace="true" />
-			<milieu majuscule="false" phono="'2'" nature="'ADV'" nbsyll="2" replace="true" />
-			<des majuscule="false" phono="'e'" nature="'ART:ind'" nbsyll="1" replace="true" />
-			<huées majuscule="true" phono="'e'" nature="'NOM'" nbsyll="1" replace="true" />
-			<, nature="PON" replace="false" />
-		</vers>
-		<vers ID="0">
-			<ses majuscule="true" phono="'e'" nature="'ADJ:pos'" nbsyll="1" replace="true" />
-			<ailes majuscule="false" phono="'l'" nature="'NOM'" nbsyll="1" replace="true" />
-			<de majuscule="false" phono="'�'" nature="'PRE'" nbsyll="1" replace="true" />
-			<géant majuscule="false" phono="'@'" nature="'NOM'" nbsyll="2" replace="true" />
-			<l’empêchent majuscule="false" replace="false" />
-			<de majuscule="false" phono="'�'" nature="'PRE'" nbsyll="1" replace="true" />
-			<marcher majuscule="true" phono="'e'" nature="'VER'" nbsyll="2" replace="true" />
-			<. nature="PON" replace="false" />
-		</vers>
-	</strophe>
+<poeme titre="L'albatros" auteur="Charles Baudelaire">
+	<vers>
+		<souvent majuscule="true" phono="'@'" nature="'ADV'" nbsyll="2" replace="true" />
+		<, nature="PON" replace="false" />
+		<pour majuscule="false" phono="'R'" nature="'PRE'" nbsyll="1" replace="true" />
+		<sâ€™amuser majuscule="true" replace="false" />
+		<, nature="PON" replace="false" />
+		<les majuscule="false" phono="'e'" nature="'ART:def'" nbsyll="1" replace="true" />
+		<hommes majuscule="false" phono="'m'" nature="'NOM'" nbsyll="1" replace="true" />
+		<dâ€™Ã©quipage majuscule="false" replace="false" />
+	</vers>
+	<vers>
+		<prennent majuscule="true" phono="'n'" nature="'VER'" nbsyll="1" replace="true" />
+		<des majuscule="false" phono="'e'" nature="'ART:ind'" nbsyll="1" replace="true" />
+		<albatros majuscule="true" phono="'s'" nature="'NOM'" nbsyll="3" replace="true" />
+		<, nature="PON" replace="false" />
+		<vastes majuscule="false" phono="'t'" nature="'ADJ'" nbsyll="1" replace="true" />
+		<oiseaux majuscule="false" phono="'o'" nature="'NOM'" nbsyll="2" replace="true" />
+		<des majuscule="false" phono="'e'" nature="'ART:ind'" nbsyll="1" replace="true" />
+		<mers majuscule="true" phono="'R'" nature="'NOM'" nbsyll="1" replace="true" />
+		<, nature="PON" replace="false" />
+	</vers>
+	<vers>
+		<qui majuscule="true" phono="'i'" nature="'PRO:rel'" nbsyll="1" replace="true" />
+		<suivent majuscule="true" phono="'v'" nature="'VER'" nbsyll="1" replace="true" />
+		<, nature="PON" replace="false" />
+		<indolents majuscule="false" phono="'@'" nature="'ADJ'" nbsyll="3" replace="true" />
+		<compagnons majuscule="false" phono="'§'" nature="'NOM'" nbsyll="3" replace="true" />
+		<de majuscule="false" phono="'°'" nature="'PRE'" nbsyll="1" replace="true" />
+		<voyage majuscule="true" phono="'Z'" nature="'NOM'" nbsyll="2" replace="true" />
+		<, nature="PON" replace="false" />
+	</vers>
+	<vers>
+		<le majuscule="true" phono="'°'" nature="'ART:def'" nbsyll="1" replace="true" />
+		<navire majuscule="false" phono="'R'" nature="'NOM'" nbsyll="2" replace="true" />
+		<glissant majuscule="false" phono="'@'" nature="'VER'" nbsyll="2" replace="true" />
+		<sur majuscule="false" phono="'R'" nature="'PRE'" nbsyll="1" replace="true" />
+		<les majuscule="false" phono="'e'" nature="'ART:def'" nbsyll="1" replace="true" />
+		<gouffres majuscule="false" phono="'R'" nature="'NOM'" nbsyll="1" replace="true" />
+		<amers majuscule="true" phono="'R'" nature="'ADJ'" nbsyll="2" replace="true" />
+		<. nature="PON" replace="false" />
+	</vers>
+	<vers />
+	<vers>
+		<a majuscule="true" replace="false" />
+		<peine majuscule="false" phono="'n'" nature="'NOM'" nbsyll="1" replace="true" />
+		<les majuscule="false" phono="'e'" nature="'ART:def'" nbsyll="1" replace="true" />
+		<ont-ils majuscule="false" replace="false" />
+		<dÃ©posÃ©s majuscule="false" phono="'e'" nature="'VER'" nbsyll="3" replace="true" />
+		<sur majuscule="false" phono="'R'" nature="'PRE'" nbsyll="1" replace="true" />
+		<les majuscule="false" phono="'e'" nature="'ART:def'" nbsyll="1" replace="true" />
+		<planches majuscule="true" phono="'S'" nature="'NOM'" nbsyll="1" replace="true" />
+		<, nature="PON" replace="false" />
+	</vers>
+	<vers>
+		<que majuscule="true" phono="'°'" nature="'PRO:rel'" nbsyll="1" replace="true" />
+		<ces majuscule="false" phono="'e'" nature="'ADJ:dem'" nbsyll="1" replace="true" />
+		<rois majuscule="false" phono="'a'" nature="'NOM'" nbsyll="1" replace="true" />
+		<de majuscule="false" phono="'°'" nature="'PRE'" nbsyll="1" replace="true" />
+		<lâ€™azur majuscule="true" replace="false" />
+		<, nature="PON" replace="false" />
+		<maladroits majuscule="false" phono="'a'" nature="'ADJ'" nbsyll="3" replace="true" />
+		<et majuscule="false" phono="'e'" nature="'CON'" nbsyll="1" replace="true" />
+		<honteux majuscule="true" phono="'2'" nature="'ADJ'" nbsyll="2" replace="true" />
+		<, nature="PON" replace="false" />
+	</vers>
+	<vers>
+		<laissent majuscule="true" phono="'s'" nature="'VER'" nbsyll="1" replace="true" />
+		<piteusement majuscule="false" phono="'@'" nature="'ADV'" nbsyll="4" replace="true" />
+		<leurs majuscule="false" phono="'R'" nature="'ADJ:pos'" nbsyll="1" replace="true" />
+		<grandes majuscule="false" phono="'d'" nature="'ADJ'" nbsyll="1" replace="true" />
+		<ailes majuscule="false" phono="'l'" nature="'NOM'" nbsyll="1" replace="true" />
+		<blanches majuscule="false" phono="'S'" nature="'ADJ'" nbsyll="1" replace="true" />
+	</vers>
+	<vers>
+		<comme majuscule="true" phono="'m'" nature="'CON'" nbsyll="1" replace="true" />
+		<des majuscule="false" phono="'e'" nature="'ART:ind'" nbsyll="1" replace="true" />
+		<avirons majuscule="false" phono="'§'" nature="'NOM'" nbsyll="3" replace="true" />
+		<traÃ®ner majuscule="false" phono="'e'" nature="'VER'" nbsyll="2" replace="true" />
+		<Ã  majuscule="false" phono="'a'" nature="'PRE'" nbsyll="1" replace="true" />
+		<cÃ´tÃ© majuscule="false" phono="'e'" nature="'NOM'" nbsyll="2" replace="true" />
+		<dâ€™eux majuscule="true" replace="false" />
+		<. nature="PON" replace="false" />
+	</vers>
+	<vers />
+	<vers>
+		<ce majuscule="true" phono="'2'" nature="'PRO:dem'" nbsyll="1" replace="true" />
+		<voyageur majuscule="false" phono="'R'" nature="'NOM'" nbsyll="3" replace="true" />
+		<ailÃ© majuscule="true" phono="'e'" nature="'ADJ'" nbsyll="2" replace="true" />
+		<, nature="PON" replace="false" />
+		<comme majuscule="false" phono="'m'" nature="'CON'" nbsyll="1" replace="true" />
+		<il majuscule="false" phono="'l'" nature="'PRO:per'" nbsyll="1" replace="true" />
+		<est majuscule="false" phono="'e'" nature="'VER'" nbsyll="1" replace="true" />
+		<gauche majuscule="false" phono="'S'" nature="'ADJ'" nbsyll="1" replace="true" />
+		<et majuscule="false" phono="'e'" nature="'CON'" nbsyll="1" replace="true" />
+		<veule majuscule="false" phono="'l'" nature="'ADJ'" nbsyll="1" replace="true" />
+		<! majuscule="false" replace="false" />
+	</vers>
+	<vers>
+		<lui majuscule="true" phono="'i'" nature="'PRO:per'" nbsyll="1" replace="true" />
+		<, nature="PON" replace="false" />
+		<naguÃ¨re majuscule="false" phono="'R'" nature="'ADV'" nbsyll="2" replace="true" />
+		<si majuscule="false" phono="'i'" nature="'CON'" nbsyll="1" replace="true" />
+		<beau majuscule="true" phono="'o'" nature="'ADJ'" nbsyll="1" replace="true" />
+		<, nature="PON" replace="false" />
+		<quâ€™il majuscule="false" replace="false" />
+		<est majuscule="false" phono="'e'" nature="'VER'" nbsyll="1" replace="true" />
+		<comique majuscule="false" phono="'k'" nature="'ADJ'" nbsyll="2" replace="true" />
+		<et majuscule="false" phono="'e'" nature="'CON'" nbsyll="1" replace="true" />
+		<laid majuscule="false" phono="'E'" nature="'ADJ'" nbsyll="1" replace="true" />
+		<! majuscule="false" replace="false" />
+	</vers>
+	<vers>
+		<lâ€™un majuscule="true" replace="false" />
+		<agace majuscule="false" phono="'s'" nature="'VER'" nbsyll="2" replace="true" />
+		<son majuscule="false" phono="'§'" nature="'ADJ:pos'" nbsyll="1" replace="true" />
+		<bec majuscule="false" phono="'k'" nature="'NOM'" nbsyll="1" replace="true" />
+		<avec majuscule="false" phono="'k'" nature="'PRE'" nbsyll="2" replace="true" />
+		<un majuscule="false" phono="'1'" nature="'ART:ind'" nbsyll="1" replace="true" />
+		<brÃ»le-gueule majuscule="true" phono="'l'" nature="'NOM'" nbsyll="2" replace="true" />
+		<, nature="PON" replace="false" />
+	</vers>
+	<vers>
+		<lâ€™autre majuscule="true" replace="false" />
+		<mime majuscule="true" phono="'m'" nature="'VER'" nbsyll="1" replace="true" />
+		<, nature="PON" replace="false" />
+		<en majuscule="false" phono="'@'" nature="'PRE'" nbsyll="1" replace="true" />
+		<boitant majuscule="true" phono="'@'" nature="'VER'" nbsyll="2" replace="true" />
+		<, nature="PON" replace="false" />
+		<lâ€™infirme majuscule="false" replace="false" />
+		<qui majuscule="false" phono="'i'" nature="'PRO:rel'" nbsyll="1" replace="true" />
+		<volait majuscule="false" phono="'E'" nature="'VER'" nbsyll="2" replace="true" />
+		<! majuscule="false" replace="false" />
+	</vers>
+	<vers>
+		<le majuscule="true" phono="'°'" nature="'ART:def'" nbsyll="1" replace="true" />
+		<poÃ¨te majuscule="true" phono="'t'" nature="'NOM'" nbsyll="2" replace="true" />
+		<est majuscule="false" phono="'e'" nature="'VER'" nbsyll="1" replace="true" />
+		<semblable majuscule="false" phono="'l'" nature="'ADJ'" nbsyll="2" replace="true" />
+		<au majuscule="false" phono="'o'" nature="'ART:def'" nbsyll="1" replace="true" />
+		<prince majuscule="false" phono="'s'" nature="'NOM'" nbsyll="1" replace="true" />
+		<des majuscule="false" phono="'e'" nature="'ART:ind'" nbsyll="1" replace="true" />
+		<nuÃ©es majuscule="false" phono="'e'" nature="'NOM'" nbsyll="1" replace="true" />
+	</vers>
+	<vers>
+		<qui majuscule="true" phono="'i'" nature="'PRO:rel'" nbsyll="1" replace="true" />
+		<hante majuscule="false" phono="'t'" nature="'VER'" nbsyll="1" replace="true" />
+		<la majuscule="false" phono="'a'" nature="'ART:def'" nbsyll="1" replace="true" />
+		<tempÃªte majuscule="false" phono="'t'" nature="'NOM'" nbsyll="2" replace="true" />
+		<et majuscule="false" phono="'e'" nature="'CON'" nbsyll="1" replace="true" />
+		<se majuscule="false" phono="'°'" nature="'PRO:per'" nbsyll="1" replace="true" />
+		<rit majuscule="false" phono="'i'" nature="'VER'" nbsyll="1" replace="true" />
+		<de majuscule="false" phono="'°'" nature="'PRE'" nbsyll="1" replace="true" />
+		<lâ€™archer majuscule="false" replace="false" />
+		<:anonymous majuscule="true" replace="false" />
+		<; nature="PON" replace="false" />
+	</vers>
+	<vers>
+		<exilÃ© majuscule="true" phono="'e'" nature="'VER'" nbsyll="3" replace="true" />
+		<sur majuscule="false" phono="'R'" nature="'PRE'" nbsyll="1" replace="true" />
+		<le majuscule="false" phono="'°'" nature="'ART:def'" nbsyll="1" replace="true" />
+		<sol majuscule="false" phono="'l'" nature="'NOM'" nbsyll="1" replace="true" />
+		<au majuscule="false" phono="'o'" nature="'ART:def'" nbsyll="1" replace="true" />
+		<milieu majuscule="false" phono="'2'" nature="'ADV'" nbsyll="2" replace="true" />
+		<des majuscule="false" phono="'e'" nature="'ART:ind'" nbsyll="1" replace="true" />
+		<huÃ©es majuscule="true" phono="'e'" nature="'NOM'" nbsyll="1" replace="true" />
+		<, nature="PON" replace="false" />
+	</vers>
+	<vers>
+		<ses majuscule="true" phono="'e'" nature="'ADJ:pos'" nbsyll="1" replace="true" />
+		<ailes majuscule="false" phono="'l'" nature="'NOM'" nbsyll="1" replace="true" />
+		<de majuscule="false" phono="'°'" nature="'PRE'" nbsyll="1" replace="true" />
+		<gÃ©ant majuscule="false" phono="'@'" nature="'NOM'" nbsyll="2" replace="true" />
+		<lâ€™empÃªchent majuscule="false" replace="false" />
+		<de majuscule="false" phono="'°'" nature="'PRE'" nbsyll="1" replace="true" />
+		<marcher majuscule="true" phono="'e'" nature="'VER'" nbsyll="2" replace="true" />
+		<. nature="PON" replace="false" />
+	</vers>
 </poeme>
