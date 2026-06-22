@@ -77,14 +77,14 @@ void ParcheminBig::_update(sf::RenderWindow &mWindow, const float &deltaSec)
 	contenu.display(mWindow);
 }
 
-void ParcheminBig::parse(const pugi::xml_node& xml_poeme)
+void ParcheminBig::parse(pugi::xml_node xml_poeme)
 {
 	std::string new_containt;
 
-	std::cout << xml_poeme.first_child().name() << '\n';
-	for (auto &vers : xml_poeme.children())
+	std::cout << xml_poeme.first_child().next_sibling().next_sibling().name() << '\n';
+	for (auto &vers : xml_poeme.first_child().children())
 	{
-		std::cout << "vers" << '\n';
+		//std::cout << "vers" << '\n';
 		std::cout << vers.name() << '\n';
 
 
@@ -123,8 +123,7 @@ bool ParcheminBig::reset_contain()
 	}
 
 
-	std::cout << doc.find_child("strophe") << '\n';
-	//parse(doc.first_child().first_child());
+	parse(poeme);
 
 	return correct;
 }
