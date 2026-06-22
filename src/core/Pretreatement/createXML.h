@@ -1,0 +1,1 @@
+void create_xml(sqlite3* db);
