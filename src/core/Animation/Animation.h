@@ -22,9 +22,12 @@ public:
 	float get_duration() const;
 	bool is_playing() const;
 
+	void set_duration(float new_duration);
+
 	void play();
 	void pause();
 	void resume();
 	void progress(const float delta);
 	void revers();
+
 };

@@ -59,3 +59,8 @@ void Animation::revers()
 {
 	_revers();
 }
+
+void Animation::set_duration(float new_duration)
+{
+	duration = new_duration;
+}

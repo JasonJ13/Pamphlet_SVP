@@ -2,7 +2,7 @@
 #include <iostream>
 
 template<class T>
-AnimationUnit<T>::AnimationUnit(T *ptr, const T vend, const float duration, const bool cycling, const bool reversing) : ptr{ ptr }, vbegin{ *ptr }, vend{ vend }, Animation{duration,cycling,reversing} { std::cout << "AnimationUnit ctor this=" << this << " ptr=" << ptr << '\n'; }
+AnimationUnit<T>::AnimationUnit(T *ptr, const T vend, const float duration, const bool cycling, const bool reversing) : ptr{ ptr }, vbegin{ *ptr }, vend{ vend }, Animation{duration,cycling,reversing} {}
 
 
 template<class T>
@@ -25,5 +25,3 @@ void AnimationUnit<T>::_revers()
 	vend = vbegin;
 	vbegin = inter;
 }
-
-

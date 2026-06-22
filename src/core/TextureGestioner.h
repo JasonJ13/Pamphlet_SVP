@@ -2,24 +2,20 @@
 
 #include <iostream>
 #include <map>
+#include <string_view>
 #include <SFML/Graphics.hpp>
-
-namespace Textures
-{
-	enum ID { Test, Cyrano, Parchemin};
-}
 
 class TextureGestioner
 {
 
 private:
-	std::map<Textures::ID, std::shared_ptr<sf::Texture>> textures;
+	std::map<std::string_view, std::shared_ptr<sf::Texture>> textures;
 	
 
 public:
 	TextureGestioner();
 	~TextureGestioner() = default;
 
-	sf::Sprite load(Textures::ID id, const std::string_view &file_name);
+	sf::Sprite load(const std::string_view &file_name);
 };
 
