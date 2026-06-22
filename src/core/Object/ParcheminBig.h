@@ -6,6 +6,7 @@
 #include "pugixml.hpp"
 
 #include "Interface/InterfaceText.h"
+#include <pugixml.hpp>
 
 class ParcheminBig : public InteractibleObject
 {
@@ -26,6 +27,7 @@ private :
 
 	void parse(const pugi::xml_node& xml_poeme);
 
+	pugi::xml_node add_error(pugi::xml_node poeme);
 
 public :
 	ParcheminBig(const sf::Vector2f &position, TextureGestioner &textureGestioner);

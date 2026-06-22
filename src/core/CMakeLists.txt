@@ -22,6 +22,18 @@ add_library(lib_core
   Animation/AnimationGroupLinear.cpp Animation/AnimationGroupLinear.h
   Animation/AnimationGroupParallel.cpp Animation/AnimationGroupparallel.h
 
+  pretreatment/myMainPretreatment.cpp pretreatment/myMainPretreatment.h
+  pretreatment/createSQL.cpp pretreatment/createSQL.h
+  pretreatment/createXML.cpp pretreatment/createXML.h
+
 )
 target_include_directories(lib_core PUBLIC ./)
-target_link_libraries(lib_core PUBLIC sfml-graphics)
+
+target_link_libraries(lib_core PUBLIC pugixml sfml-graphics)
+if(MSVC)
+  target_link_libraries(lib_core PUBLIC sqlite)
+else()
+  set(THREADS_PREFER_PTHREAD_FLAG ON)
+  find_package(Threads REQUIRED)
+  target_link_libraries(lib_core PUBLIC sqlite Threads::Threads ${CMAKE_DL_LIBS})
+endif()

@@ -4,7 +4,7 @@
 #include "createSQL.h"
 #include "createXML.h"
 
-int myMain() {
+int myMainPretreatment() {
   sqlite3* db;
   sqlite3_open("resources/database/words.db", &db);
   create_xml(db);

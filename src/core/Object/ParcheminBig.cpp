@@ -8,8 +8,10 @@
 #include <string>
 #include <random>
 #include <filesystem>
+#include <fstream>
 #include <vector>
 #include "pugixml.hpp"
+
 
 static std::random_device rd; // Get random number from hardware
 static std::mt19937 gen(rd()); // Seed generator
@@ -85,6 +87,8 @@ void ParcheminBig::parse(const pugi::xml_node& xml_poeme)
 
 
 	}
+}
+pugi::xml_node ParcheminBig::add_error(pugi::xml_node poeme) {
 
 }
 
@@ -94,12 +98,16 @@ bool ParcheminBig::reset_contain()
 	
 	static std::uniform_int_distribution<> dis(0, 5);
 
-	auto &new_poeme = files[0];
+	pugi::xml_document doc;
+	doc.load_file("resources/poemes/albatros.xml");
 	bool correct = (dis(gen) % 2);
 
-	std::cout << new_poeme << '\n';
-	if (correct) std::cout << "correct\n";
-	else std::cout << "not correct\n";
+	std::cout << doc << '\n';
+	if (correct) { std::cout << "correct\n"; }
+	else {
+		std::cout << "not correct\n";
+		
+	}
 
 	
 

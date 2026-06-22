@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.26)
 
 include(FetchContent)
-project(SampleGoogleTest VERSION 1.0.0 LANGUAGES CXX)
+project(Pamphlet_SVP VERSION 1.0.0 LANGUAGES C CXX)
 
 if(WIN32)
   # SonarLint support for CMake requires the following flag to be set on.
@@ -20,7 +20,9 @@ option(SFML_BUILD_NETWORK "Build network" OFF)
 FetchContent_MakeAvailable(sfml)
 
 set(CMAKE_CXX_STANDARD 23)
+cmake_policy(SET CMP0135 NEW)
 
+add_subdirectory(src/sqlite)
 add_subdirectory(src/core)
 add_subdirectory(src/main)
 
@@ -31,6 +33,15 @@ FetchContent_Declare(
         googletest
         URL https://github.com/google/googletest/archive/refs/tags/v1.17.0.tar.gz
 )
+
+#
+# Include PugiXML
+#
+FetchContent_Declare(
+    pugixml
+    URL https://github.com/zeux/pugixml/releases/download/v1.15/pugixml-1.15.tar.gz
+)
+FetchContent_MakeAvailable(pugixml)
 
 # For Windows: Prevent overriding the parent project's compiler/linker settings
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
