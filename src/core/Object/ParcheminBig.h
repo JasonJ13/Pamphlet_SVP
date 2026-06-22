@@ -4,6 +4,7 @@
 #include "../TextureGestioner.h"
 
 #include "Interface/InterfaceText.h"
+#include <pugixml.hpp>
 
 class ParcheminBig : public InteractibleObject
 {
@@ -22,6 +23,7 @@ private :
 
 	void _update(sf::RenderWindow &mWindow, const float &deltaSec) override;
 
+	pugi::xml_node add_error(pugi::xml_node poeme);
 
 public :
 	ParcheminBig(const sf::Vector2f &position, TextureGestioner &textureGestioner);
