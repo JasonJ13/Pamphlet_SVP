@@ -154,6 +154,6 @@ void create_xml(sqlite3* db) {
   parse_text(db, text, poeme);
 
   doc.print(std::cout);
-  doc.save_file("resources/texts/poemes/albatros.xml");
+  doc.save_file("resources/poemes/albatros.xml");
   sqlite3_close(db);
 }
