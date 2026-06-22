@@ -3,6 +3,8 @@
 #include "Object/InteractibleObject.h"
 #include "../TextureGestioner.h"
 
+#include "pugixml.hpp"
+
 #include "Interface/InterfaceText.h"
 
 class ParcheminBig : public InteractibleObject
@@ -21,6 +23,8 @@ private :
 	void _release(const sf::Vector2i &mouse_position, const sf::Vector2f &last_position = sf::Vector2f{}) override;
 
 	void _update(sf::RenderWindow &mWindow, const float &deltaSec) override;
+
+	void parse(const pugi::xml_node& xml_poeme);
 
 
 public :

@@ -9,6 +9,7 @@
 #include <random>
 #include <filesystem>
 #include <vector>
+#include "pugixml.hpp"
 
 static std::random_device rd; // Get random number from hardware
 static std::mt19937 gen(rd()); // Seed generator
@@ -72,6 +73,19 @@ void ParcheminBig::_update(sf::RenderWindow &mWindow, const float &deltaSec)
 
 	titre.display(mWindow);
 	contenu.display(mWindow);
+}
+
+void ParcheminBig::parse(const pugi::xml_node& xml_poeme)
+{
+	std::string new_containt;
+
+	for (auto &vers : xml_poeme.children())
+	{
+		std::cout << vers.name() << '\n';
+
+
+	}
+
 }
 
 bool ParcheminBig::reset_contain()
