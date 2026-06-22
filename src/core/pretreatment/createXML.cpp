@@ -102,24 +102,25 @@ static void parse_text(sqlite3* db, std::ifstream& text, pugi::xml_node poeme) {
     while (lineStream >> word)
     {
       std::string word_to_select = word;
-
       word_to_select.replace(0, 1, 1, (char)std::tolower(word.front()));
+
+      mot = vers.append_child("mot");
 
       //on doit créer un nouveau string et pas un string_view car back() renvoie un char et append_child prend des string en argument.
       if (std::string ponc{ word_to_select.back() }; ponc == "." || ponc == "," || ponc == ";") {
         word_to_select.pop_back();
         possibilities = select_word(db, word_to_select);
 
-        mot = vers.append_child(word_to_select);
+        mot.append_attribute("label") = word_to_select;
         mot.append_attribute("majuscule") = (word_to_select != word);
 
-        pugi::xml_node p = vers.append_child(ponc);
-        p.append_attribute("nature") = "PON";
+        pugi::xml_node p = vers.append_child("ponc");
+        p.append_attribute("label") = ponc;
         p.append_attribute("replace") = false;
       }
       else {
         possibilities = select_word(db, word_to_select);
-        mot = vers.append_child(word_to_select);
+        mot.append_attribute("label") = word_to_select;
         mot.append_attribute("majuscule") = (word_to_select != word);
       }
       std::cout << "Word : \"" << word << "\" in" << '\n' << line << '\n' << "is:" << '\n';

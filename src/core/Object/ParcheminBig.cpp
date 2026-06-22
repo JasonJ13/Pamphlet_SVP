@@ -92,14 +92,19 @@ void ParcheminBig::parse(pugi::xml_node xml_poeme)
 }
 pugi::xml_node ParcheminBig::add_error(pugi::xml_node poeme) {
 	size_t count = std::distance(poeme.begin(), poeme.end());
+	for (auto vers = poeme.begin(); vers != poeme.end(); ++vers) {
+		std::cout << vers->name() << '\n';
+	}
 	std::uniform_int_distribution<> vers_to_change(0, count);
 	pugi::xml_node vers = poeme.first_child();
-	for (auto i = 0; i < vers_to_change(gen); ++i)
+	std::cout << vers_to_change(gen) << " : " << count << '\n';
+
+	for (auto i = 0; i < 3; ++i)
 	{
 		vers = vers.next_sibling();
 	}
 	pugi::xml_node mot = vers.last_child();
-	std::cout << mot.attribute("replace");
+	std::cout << mot.name() << " : " << mot.attribute("replace") << '\n';
 	mot.previous_sibling();
 	std::cout << vers.name() << '\n';
 	return poeme;
