@@ -92,17 +92,12 @@ static void parse_text(sqlite3* db, std::ifstream& text, pugi::xml_node poeme) {
   std::string word;
   select_result possibilities;
 
-  pugi::xml_node strophe = poeme.append_child("strophe");
-  strophe.append_attribute("ID") = 0;
-  strophe.append_attribute("nombre de vers") = 1;
-
   
   while (std::getline(text, line))
   {
     std::stringstream lineStream{ line };
-    pugi::xml_node vers = strophe.append_child("vers");
+    pugi::xml_node vers = poeme.append_child("vers");
     pugi::xml_node mot;
-    vers.append_attribute("ID") = 0;
 
     while (lineStream >> word)
     {
@@ -145,8 +140,8 @@ void create_xml(sqlite3* db) {
   // tag::code[]
   // add node with some name
   pugi::xml_node poeme = doc.append_child("poeme");
-  poeme.append_attribute("titre") = "test";
-  poeme.append_attribute("auteur") = "Simon Pesneau";
+  poeme.append_attribute("titre") = "L\'albatros";
+  poeme.append_attribute("auteur") = "Charles Baudelaire";
 
 
   // end::code[]
