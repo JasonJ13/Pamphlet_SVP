@@ -26,7 +26,7 @@ static int callback(void* p, int argc, char** argv, [[maybe_unused]] char** azCo
 static void fill_xml(pugi::xml_node mot, std::vector<std::string> choice) {
   mot.append_attribute("phono") = choice[1];
   mot.append_attribute("nature") = choice[2];
-  mot.append_attribute("nbsyll") = choice[3];
+  mot.append_attribute("nbsyll") = std::atoi(choice[3].c_str());
   mot.append_attribute("replace") = true;
 }
 
@@ -95,12 +95,16 @@ static void parse_text(sqlite3* db, std::ifstream& text, pugi::xml_node poeme) {
   
   while (std::getline(text, line))
   {
+    pugi::xml_node vers;
     std::stringstream lineStream{ line };
-    pugi::xml_node vers = poeme.append_child("vers");
-    pugi::xml_node mot;
+    //éviter les vers vides
+    if (line != "") {
+      vers = poeme.append_child("vers");
+    }
 
     while (lineStream >> word)
     {
+      pugi::xml_node mot;
       std::string word_to_select = word;
       word_to_select.replace(0, 1, 1, (char)std::tolower(word.front()));
 
@@ -111,7 +115,7 @@ static void parse_text(sqlite3* db, std::ifstream& text, pugi::xml_node poeme) {
         word_to_select.pop_back();
         possibilities = select_word(db, word_to_select);
 
-        mot.append_attribute("label") = word_to_select;
+        mot.append_attribute("label") = std::format(R"({})", word_to_select);
         mot.append_attribute("majuscule") = (word_to_select != word);
 
         pugi::xml_node p = vers.append_child("ponc");
@@ -120,7 +124,7 @@ static void parse_text(sqlite3* db, std::ifstream& text, pugi::xml_node poeme) {
       }
       else {
         possibilities = select_word(db, word_to_select);
-        mot.append_attribute("label") = word_to_select;
+        mot.append_attribute("label") = std::format(R"({})", word_to_select);
         mot.append_attribute("majuscule") = (word_to_select != word);
       }
       std::cout << "Word : \"" << word << "\" in" << '\n' << line << '\n' << "is:" << '\n';

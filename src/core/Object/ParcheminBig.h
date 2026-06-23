@@ -25,9 +25,13 @@ private :
 
 	void _update(sf::RenderWindow &mWindow, const float &deltaSec) override;
 
+<<<<<<< Updated upstream
 	void parse(const pugi::xml_node &xml_poeme);
 
 	pugi::xml_node add_error(pugi::xml_node poeme);
+=======
+	void add_error(pugi::xml_node* poeme);
+>>>>>>> Stashed changes
 
 public :
 	ParcheminBig(const sf::Vector2f &position, TextureGestioner &textureGestioner);

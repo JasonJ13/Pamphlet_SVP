@@ -83,7 +83,7 @@
 		<ponc label="." replace="false" />
 	</vers>
 	<vers>
-		<mot label="ce" majuscule="true" phono="'2'" nature="'PRO:dem'" nbsyll="1" replace="true" />
+		<mot label="ce" majuscule="true" phono="'2'" nature="'ADJ:dem'" nbsyll="1" replace="true" />
 		<mot label="voyageur" majuscule="false" phono="'R'" nature="'NOM'" nbsyll="3" replace="true" />
 		<mot label="ailé" majuscule="true" phono="'e'" nature="'ADJ'" nbsyll="2" replace="true" />
 		<ponc label="," replace="false" />
@@ -162,7 +162,7 @@
 		<mot label="au" majuscule="false" phono="'o'" nature="'ART:def'" nbsyll="1" replace="true" />
 		<mot label="milieu" majuscule="false" phono="'2'" nature="'ADV'" nbsyll="2" replace="true" />
 		<mot label="des" majuscule="false" phono="'e'" nature="'ART:ind'" nbsyll="1" replace="true" />
-		<mot label="huées" majuscule="true" phono="'e'" nature="'NOM'" nbsyll="1" replace="true" />
+		<mot label="huées" majuscule="true" phono="'e'" nature="'VER'" nbsyll="1" replace="true" />
 		<ponc label="," replace="false" />
 	</vers>
 	<vers>
