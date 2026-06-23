@@ -109,6 +109,7 @@ static void parse_text(sqlite3* db, std::ifstream& text, pugi::xml_node poeme) {
       word_to_select.replace(0, 1, 1, (char)std::tolower(word.front()));
 
       mot = vers.append_child("mot");
+      mot.append_attribute("majuscule") = (word_to_select != word);
 
       //on doit créer un nouveau string et pas un string_view car back() renvoie un char et append_child prend des string en argument.
       if (std::string ponc{ word_to_select.back() }; ponc == "." || ponc == "," || ponc == ";") {
@@ -116,7 +117,6 @@ static void parse_text(sqlite3* db, std::ifstream& text, pugi::xml_node poeme) {
         possibilities = select_word(db, word_to_select);
 
         mot.append_attribute("label") = std::format(R"({})", word_to_select);
-        mot.append_attribute("majuscule") = (word_to_select != word);
 
         pugi::xml_node p = vers.append_child("ponc");
         p.append_attribute("label") = ponc;
@@ -125,7 +125,6 @@ static void parse_text(sqlite3* db, std::ifstream& text, pugi::xml_node poeme) {
       else {
         possibilities = select_word(db, word_to_select);
         mot.append_attribute("label") = std::format(R"({})", word_to_select);
-        mot.append_attribute("majuscule") = (word_to_select != word);
       }
       std::cout << "Word : \"" << word << "\" in" << '\n' << line << '\n' << "is:" << '\n';
       user_choice(mot, possibilities);

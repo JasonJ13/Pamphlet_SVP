@@ -11,14 +11,10 @@
 #include <filesystem>
 #include <fstream>
 #include <vector>
-<<<<<<< Updated upstream
 #include "pugixml.hpp"
-
-
-=======
 #include "sqlite3.h"
 using namespace std::literals;
->>>>>>> Stashed changes
+
 static std::random_device rd; // Get random number from hardware
 static std::mt19937 gen(rd()); // Seed generator
 
@@ -85,7 +81,6 @@ void ParcheminBig::_update(sf::RenderWindow &mWindow, const float &deltaSec)
 	contenu.display(mWindow);
 }
 
-<<<<<<< Updated upstream
 void ParcheminBig::parse(const pugi::xml_node& xml_poeme)
 {
 	std::string new_string = "";
@@ -95,7 +90,9 @@ void ParcheminBig::parse(const pugi::xml_node& xml_poeme)
 	{
 		for (auto &word : vers.children())
 		{
-			if (std::strcmp(word.name(), "mot") == 0)	new_string =  new_string + " " + word.attribute("label").as_string();
+			std::string mot = word.attribute("label").as_string();
+			if (mot != "" && word.attribute("majuscule").as_bool()) { mot.replace(0, 1, 1, (char)std::toupper(mot.front())); }
+			if (word.name() == "mot"sv)	new_string =  new_string + " " + mot;
 			else new_string += word.attribute("label").as_string();
 		}
 		new_string += '\n';
@@ -103,18 +100,6 @@ void ParcheminBig::parse(const pugi::xml_node& xml_poeme)
 
 	contenu.set_string( new_string );
 }
-
-
-pugi::xml_node ParcheminBig::add_error(pugi::xml_node poeme) {
-	size_t count = std::distance(poeme.begin(), poeme.end());
-	for (auto vers = poeme.begin(); vers != poeme.end(); ++vers) {
-		std::cout << vers->name() << '\n';
-	}
-	std::uniform_int_distribution<> vers_to_change(0, count);
-	pugi::xml_node vers = poeme.first_child();
-	std::cout << vers_to_change(gen) << " : " << count << '\n';
-=======
->>>>>>> Stashed changes
 
 static int callback(void* p, int argc, char** argv, [[maybe_unused]] char** azColName) {
 	std::vector<std::string> infos;
@@ -139,11 +124,11 @@ static void replace_word (pugi::xml_node* mot) {
 		sqlite3_free(zErrMsg);
 	}
 
-	std::cout << '\n';
 	std::uniform_int_distribution<> selected(0, possibilities.size());
-	std::cout << selected(gen)  << ' ' << possibilities.size() << '\n';
-	mot->attribute("label").set_value(possibilities[selected(gen)][0]);
-	std::cout << mot->attribute("label").as_string() << '\n';
+	auto new_word = possibilities[selected(gen)][0];
+	new_word.erase(0, 1);   //delete the ' '
+	new_word.erase(new_word.size() - 1, 1);
+	mot->attribute("label").set_value(new_word);
 	return;
 }
 
@@ -163,7 +148,6 @@ void ParcheminBig::add_error(pugi::xml_node* poeme) {
 			mot = mot.previous_sibling();
 		}
 		if (mot.attribute("replace").as_bool()) {
-			std::cout << mot.attribute("label").as_string() << '\n';
 			replace_word(&mot);
 			error_added = true;
 		}
@@ -183,11 +167,7 @@ bool ParcheminBig::reset_contain()
 	pugi::xml_node poeme = doc.child("poeme");
 	bool correct = (dis(gen) % 2);
 
-	if (correct) { std::cout << "correct\n"; }
-	else {
-		std::cout << "not correct\n";
-		add_error(&poeme);
-	}
+	if (!correct) { add_error(&poeme); }
 
 
 	parse(poeme);
