@@ -6,10 +6,9 @@
 #include <utility>
 
 #include "Animation/Animation.h"
-#include "Animation/AnimationUnit.hpp"
 
 #include "Interface/Interface.h"
-#include "Interface/interfaceSprite.h"
+#include "Interface/InterfaceSprite.h"
 
 
 

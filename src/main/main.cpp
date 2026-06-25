@@ -2,12 +2,15 @@
 #include <fstream>
 #include <iostream>
 
-#include "myMain.h"
+#include "game.h"
 #include "pretreatment/myMainPretreatment.h"
 
 
 int main() { 
 
-	return myMain(); 
+	Game game{};
+	game.run();
 	//return myMainPretreatment();
+
+	return 0;
 }

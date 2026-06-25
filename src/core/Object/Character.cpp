@@ -9,12 +9,12 @@
 
 #include "../Animation/AnimationUnit.hpp"
 #include "../Animation/AnimationGroupLinear.h"
-#include "../Animation/AnimationGroupparallel.h"
+#include "../Animation/AnimationGroupParallel.h"
 
 #include "../Game.h"
 
 
-Character::Character(const sf::Vector2f &position, TextureGestioner &textureGestioner) : GameObject{ position, textureGestioner.load("Resources/Cyrano.png"), sf::Vector2f(8,8), 4 }
+Character::Character(const sf::Vector2f &position, TextureGestioner &textureGestioner) : GameObject{ position, textureGestioner.load("resources/Cyrano.png"), sf::Vector2f(8,8), 4 }
 {
 
 	auto anim1 = std::make_unique<AnimationUnit<float>>(&this->position.x, SIZE_X/6 - get_size().x/2, duration_walking);

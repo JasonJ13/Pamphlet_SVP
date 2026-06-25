@@ -5,7 +5,7 @@
 #include "../Animation/AnimationUnit.hpp"
 #include "../Animation/AnimationGroupParallel.h"
 
-ParcheminLittle::ParcheminLittle(const sf::Vector2f &position, TextureGestioner &textureGestioner) : InteractibleObject{ std::make_unique<InterfaceSprite>("Resources/parchemin.png", textureGestioner, 5, 0.02) }
+ParcheminLittle::ParcheminLittle(const sf::Vector2f &position, TextureGestioner &textureGestioner) : InteractibleObject{ std::make_unique<InterfaceSprite>("resources/parchemin.png", textureGestioner, 5, 0.02) }
 {
 	set_position(position);
 	auto throwAnim = std::make_unique<AnimationUnit<float>>(&this->position.y, this->position.y + 256, 0.2);

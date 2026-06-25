@@ -1,5 +1,3 @@
-#pragma once
-
 #include "Game.h"
 #include "TextureGestioner.h"
 
@@ -17,7 +15,7 @@ const sf::Time Game::TimePerFrame = sf::seconds(1.f / 60.f);
 
 TextureGestioner texturesGestioner{};
 
-Game::Game() : mouse_information{ sf::Vector2i {0,0}, false, nullptr, sf::Vector2f{0,0} } { }
+Game::Game() : mouse_information{ sf::Vector2i {0,0}, false, nullptr, sf::Vector2f{0.f,0.f} } { }
 
 
 std::shared_ptr<InteractibleObject> Game::get_object_from_position(sf::Vector2i position)
@@ -41,7 +39,7 @@ std::shared_ptr<InteractibleObject> Game::get_object_from_position(sf::Vector2i 
 
 void Game::new_character()
 {
-  auto new_character = std::make_shared<Character>(sf::Vector2f(-128, -2), texturesGestioner);
+  auto new_character = std::make_shared<Character>(sf::Vector2f(-128.f, -2.f), texturesGestioner);
   
   parchemin = new_character->get_parchemin();
   for (auto parchemin : parchemin->get_parchemins())
@@ -58,15 +56,15 @@ void Game::prepare()
 {
   auto separationRectangle = std::make_unique<InterfaceRectangle>(8, SIZE_Y, sf::Color::Black, 5);
   separationRectangle->set_position(SIZE_X / 3, 0);
-  gameObjects.push_back(std::make_shared<FixObject>(std::move(separationRectangle)));
+  gameObjects.push_back(std::make_unique<FixObject>(std::move(separationRectangle)));
 
   scoreInterface = std::make_unique<InterfaceText>(std::to_string(score), 10);
 
   auto leftRectangle = std::make_unique<InterfaceRectangle>(SIZE_X / 3, SIZE_Y, sf::Color{ 64, 32, 0 }, 2);
   gameObjects.push_back(std::make_shared<FixObject>(std::move(leftRectangle)));
 
-  gameObjects.push_back(std::make_shared<FixObject>(sf::Vector2f(0, SIZE_Y / 2), "resources/table.png", texturesGestioner, sf::Vector2f(2.1, 2.1), 4));
-  gameObjects.push_back(std::make_shared<FixObject>(sf::Vector2f(0, SIZE_Y - 256), "resources/bin.png", texturesGestioner, sf::Vector2f(4, 4), 4));
+  gameObjects.push_back(std::make_shared<FixObject>(sf::Vector2f(0.f, SIZE_Y / 2), "resources/table.png", texturesGestioner, sf::Vector2f(2.1, 2.1), 4));
+  gameObjects.push_back(std::make_shared<FixObject>(sf::Vector2f(0.f, SIZE_Y - 256), "resources/bin.png", texturesGestioner, sf::Vector2f(4.f, 4.f), 4));
 
   new_character();
 }
@@ -121,7 +119,7 @@ void Game::run() {
   sf::Time timeSinceLastUpdate = sf::Time::Zero;
 
   sf::Image icon = sf::Image{};
-  if (!icon.loadFromFile("Resources/parchemin.png"))
+  if (!icon.loadFromFile("resources/parchemin.png"))
   {
     std::cout << "icon not found\n";
     abort();

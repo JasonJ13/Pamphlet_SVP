@@ -1,5 +1,4 @@
 add_library(lib_core
-  myMain.cpp myMain.h
   Game.cpp Game.h
   TextureGestioner.cpp TextureGestioner.h
 
@@ -17,10 +16,10 @@ add_library(lib_core
   Object/Interface/InterfaceText.cpp Object/Interface/InterfaceText.h
 
   Animation/Animation.cpp Animation/Animation.h
-  Animation/Animationunit.inl Animation/AnimationUnit.hpp
+  Animation/AnimationUnit.inl Animation/AnimationUnit.hpp
   Animation/AnimationGroup.cpp Animation/AnimationGroup.h
   Animation/AnimationGroupLinear.cpp Animation/AnimationGroupLinear.h
-  Animation/AnimationGroupParallel.cpp Animation/AnimationGroupparallel.h
+  Animation/AnimationGroupParallel.cpp Animation/AnimationGroupParallel.h
 
   pretreatment/myMainPretreatment.cpp pretreatment/myMainPretreatment.h
   pretreatment/createSQL.cpp pretreatment/createSQL.h

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include <SFML/Graphics/color.hpp>
+#include <SFML/Graphics/Color.hpp>
 #include <utility>
 #include <iostream>
 #include <memory>

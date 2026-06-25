@@ -19,7 +19,7 @@ static std::random_device rd; // Get random number from hardware
 static std::mt19937 gen(rd()); // Seed generator
 
 
-static const std::filesystem::path resourcesPath = std::filesystem::path("Resources") / "poemes";
+static const std::filesystem::path resourcesPath = std::filesystem::path("resources") / "poemes";
 static sqlite3* db;
 
 ParcheminBig::ParcheminBig(const sf::Vector2f &position, TextureGestioner &textureGestioner) : InteractibleObject{ std::make_unique<InterfaceSprite>("Resources/parcheminEmpty.png", textureGestioner, 1, 0.2) }, titre{ "Titre", 3 }, contenu{ "blablabla", 3 }

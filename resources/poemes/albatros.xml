@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <poeme titre="L'albatros" auteur="Charles Baudelaire">
 	<vers>
 		<mot label="souvent" majuscule="true" phono="'@'" nature="'ADV'" nbsyll="2" replace="true" />
@@ -8,7 +8,7 @@
 		<ponc label="," replace="false" />
 		<mot label="les" majuscule="false" phono="'e'" nature="'ART:def'" nbsyll="1" replace="true" />
 		<mot label="hommes" majuscule="false" phono="'m'" nature="'NOM'" nbsyll="1" replace="true" />
-		<mot label="d’équipage" majuscule="false" replace="false" />
+		<mot label="d'équipage" majuscule="false" replace="false" />
 	</vers>
 	<vers>
 		<mot label="prennent" majuscule="true" phono="'n'" nature="'VER'" nbsyll="1" replace="true" />

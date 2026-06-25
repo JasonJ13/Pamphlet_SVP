@@ -5,7 +5,7 @@
 #include <SFML/Graphics.hpp>
 #include <string_view>
 
-static sf::Font font{ "Resources/Garamontio.ttf" };
+static sf::Font font{ "resources/Garamontio.ttf" };
 
 class InterfaceText : public Interface
 {

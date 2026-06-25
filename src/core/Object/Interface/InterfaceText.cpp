@@ -15,6 +15,11 @@ sf::Vector2f InterfaceText::_get_size() const { return text.getScale(); }
 void InterfaceText::_set_position(const sf::Vector2f &position) { text.setPosition(position); };
 void InterfaceText::_set_angle(const sf::Angle &angle) { text.setRotation(angle); }
 void InterfaceText::_set_size(const sf::Vector2f &size) { text.setScale(size); }
-void InterfaceText::set_string(const std::string &string) { text.setString(string); }
+void InterfaceText::set_string(const std::string &string) { 
+	text.setString(sf::String::fromUtf8(
+	  string.begin(),
+	  string.end())
+  ); 
+}
 
 void InterfaceText::_display(sf::RenderWindow &window) const { window.draw(text); }
