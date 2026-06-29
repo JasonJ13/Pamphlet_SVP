@@ -32,13 +32,13 @@ Le projet est divisé en plusieurs fichiers représentant plusieurs classes et s
 
 
 ### Diagramme de classe de GameObject
-![](Graphe/ClassObject.png)
+![](doc/ClassObject.png)
 
 ### Diagramme de classe de Interface
-![](Graphe/ClassInterface.png)
+![](doc/ClassInterface.png)
 
 ### Diagramme de classe de Animation
-![](Graphe/ClassAnimation.png)
+![](doc/ClassAnimation.png)
 
 
 
